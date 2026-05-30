@@ -1,11 +1,17 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::controller(CourseController::class)->group(function(){
+    Route::get('/course/{course:slug}', 'show')->name('course.show');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
