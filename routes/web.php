@@ -14,6 +14,7 @@ Route::controller(CourseController::class)->group(function(){
 // Cart management
 Route::controller(CartController::class)->group(function(){
     Route::get('/cart', 'index')->name('cart.index');
+    Route::get('addToCart/{course:slug}', 'addToCart')->name('addtocart');
 });
 
 

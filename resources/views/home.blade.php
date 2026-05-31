@@ -9,7 +9,7 @@
                     <a href="{{ route('course.show', $item->slug) }}" class="nav-link"><h5 class="card-title">{{ $item->name }}</h5></a>
                     <p class="card-text">{{ $item->description }}</p>
                     <h5 class="text-success">Price {{ $item->price }}$</h5>
-                    <a href="#" class="btn btn-primary">Add To Cart</a>
+                    <a href="{{ route('addtocart', $item) }}" class="btn btn-primary">Add To Cart</a>
                 </div>
             </div>
         </div>
